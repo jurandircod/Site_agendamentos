@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+aside.menu-lateral{
+    width: 50px;
+    height: 100%;
+    background:#202020 ;
+    padding: 40px 0 30px 1%;
+    box-shadow: 3px 0 0 #194d13;
+    position: fixed;
+    
+    overflow: hidden;
+    transition: .3s;
+}
+aside.menu-lateral:hover{
+    width: 250px !important;
+}
+.btn-expandir{
+    width: 100%;
+    padding-left: 2%;
+
+}
+
+.btn-expandir > i{
+color: white;
+font-size: 24px;
+cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style: none;
+    padding-left: 0rem !important;
+}
+ul li.item-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 2%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 40px;
+}
+
+l li.item-menu a .icon > i{
+    font-size: 30px;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+ul li.item-menu:hover{
+    background: #57689f !important;
+    border-radius: 10px;
+}

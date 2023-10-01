@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.form-usuario {
+    margin-top: 80px;
+    margin-left: 35%;
+    position: absolute;
+    width: 470px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+form {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: white;
+}
+
+form .container {
+    width: 340px;
+    height: 230px;
+}
+
+.logoPrefeitura {
+    width: 160px;
+
+}

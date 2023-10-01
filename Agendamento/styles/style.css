@@ -1,68 +1,80 @@
-@media (max-width: 600px) {
-    
-  }
+@media (max-width: 600px) {}
 
 
-  .cards{
-    margin-top: 150px;
-    display: flex;
-    
-    gap: 40px;
-  }
-
-  .logopf{
-   height: 100px;
-
-  }
-  .navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #imgcad{
-    height: 150px;
-  }
-
-
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-   /* Adicione estilos para tornar o overlay semi-transparente */
-   background-color: rgba(0,0,0,0.5);
-   z-index: 2; /* Certifique-se que a camada esteja acima dos outros elementos */
-   display:none; /* Inicia oculto */
-   
-  }
+.cards {
+  margin-top: 150px;
+  display: flex;
+ flex-wrap: nowrap;
+  gap: 40px;
   
-  #modal {
-     position:absolute;
-     top:50%;
-     left:50%;
-     transform: translate(-50%, -50%);
-     height: 82vh;
-     width: 40vw;
-     background-color:#fff;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     padding:20px;
-     border-radius: 10px;
-  }
+}
 
-  .inline{
-    display: inline;
+.card-body {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  
+}
 
-  }
+.card img{
+  height: 200px;
+}
+
+.logopf {
+  height: 100px;
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imgcad {
+  height: 150px;
+}
+
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Adicione estilos para tornar o overlay semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  /* Certifique-se que a camada esteja acima dos outros elementos */
+  display: none;
+  /* Inicia oculto */
+
+}
+
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 82%;
+  width: 40%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.inline {
+  display: inline;
+
+}
+
 h1 {
   text-align: center;
 }
 
-#imgsimbolo{
+#imgsimbolo {
   width: 200px;
   height: 180px;
 }
