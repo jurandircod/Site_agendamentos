@@ -69,8 +69,22 @@
                         </tbody>
 
                     </table>
+                    <?php if (!isset($_SESSION)) {
+                        session_start();
+                    }
 
-                    <button href="formularios.php" id="anfiteatro" class="btn btn-primary">Agendar</button>
+                    if (isset($_POST["agendar"])) {
+                        if (!isset($_SESSION["id"])) {
+                            die("você precisar estar logado para agendar");
+                        } else {
+                            //função de agendar
+                        }
+                    }
+
+                    ?>
+                    <form method="post" action="">
+                        <button type="submit" name="agendar" href="formularios.php" id="anfiteatro" class="btn btn-primary">Agendar</button>
+                    </form>
                 </div>
             </div>
         </li>
@@ -139,7 +153,7 @@
     </section>
 
     <!--Formulário de agendamento-->
-    
+
 
     <!--fim Formulário de agendamento-->
     <?php

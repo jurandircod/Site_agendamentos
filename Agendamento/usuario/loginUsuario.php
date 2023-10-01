@@ -1,6 +1,8 @@
 <?php
 include('../conexao/config.php');
 
+include('../protected/autenticarUsuario.php');
+
 ob_start();
 //verifica se algum campo foi enviado
 if (isset($_POST['email']) || isset($_POST['senha'])) {
@@ -18,6 +20,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'"; //consulta sql
         $sql_query = $conn->query($sql_code) or die("falha na execução do codigo SQL:");// tratar erro
 
+        //pesquisa quantas linhas a sql_query retornou e atribui a quantidade
         $quantidade = $sql_query->num_rows;
 
         //inicia sessão do usuario cadastradp

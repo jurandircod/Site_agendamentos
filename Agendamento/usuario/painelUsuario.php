@@ -4,7 +4,7 @@ include("../protected/protected.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,6 @@ include("../protected/protected.php");
 </head>
 
 <body>
-
     <aside class="menu-lateral">
         <?php include("./sider_menu.php"); ?>
         <li class="item-menu">
