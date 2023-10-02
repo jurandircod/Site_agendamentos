@@ -9,13 +9,12 @@ body {
     height: 100vh;
 }
 aside.menu-lateral{
-    width: 50px;
+    width: 60px;
     height: 100%;
     background:#202020 ;
-    padding: 40px 0 30px 1%;
+    padding: 40px 0 30px 2%;
     box-shadow: 3px 0 0 #194d13;
     position: fixed;
-    
     overflow: hidden;
     transition: .3s;
 }
@@ -23,6 +22,7 @@ aside.menu-lateral:hover{
     width: 250px !important;
 }
 .btn-expandir{
+    margin-bottom: 20px;
     width: 100%;
     padding-left: 2%;
 
@@ -46,7 +46,7 @@ ul li.item-menu a{
     padding: 20px 2%;
     display: flex;
     margin-bottom: 20px;
-    line-height: 40px;
+    line-height: 20px;
 }
 
 ul li.item-menu a .txt-link{

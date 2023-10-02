@@ -18,25 +18,10 @@
                     <span class="txt-link">Voltar</span>
                 </a>
             </li>
-            <li class="item-menu d-none">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-house-gear-fill"></i></span>
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu d-none">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-calendar-check"></i></span>
-                    <span class="txt-link">Horarios agendados</span>
-                </a>
-            </li>
-            <li class="item-menu d-none">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-calendar-x"></i></span>
-                    <span class="txt-link">Remover agendamentos</span>
-                </a>
-            </li>
-                    
+            
+            
+
+        
 
     
 

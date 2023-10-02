@@ -10,13 +10,25 @@ include("../protected/protected.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<link rel="stylesheet" href="../styles/sider_menu.css">
+    <link rel="stylesheet" href="../styles/sider_menu.css">
 
 </head>
 
 <body>
     <aside class="menu-lateral">
         <?php include("./sider_menu.php"); ?>
+        <li class="item-menu d-none">
+            <a href="#">
+                <span class="icon"><i class="bi bi-calendar-check"></i></span>
+                <span class="txt-link">Horarios agendados</span>
+            </a>
+        </li>
+        <li class="item-menu d-none">
+            <a href="#">
+                <span class="icon"><i class="bi bi-calendar-x"></i></span>
+                <span class="txt-link">Remover agendamentos</span>
+            </a>
+        </li>
         <li class="item-menu">
             <a href="../conexao/logout.php">
                 <span class="icon"><i class="bi bi-box-arrow-left"></i></span>

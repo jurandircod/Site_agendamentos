@@ -1,17 +1,22 @@
-var agendarBtn = document.getElementById('anfiteatro');
-var overlay = document.getElementById('overlay');
-var fecharBtn = document.getElementById('fechar-btn');
+// var agendarBtn = document.getElementById('anfiteatro');
+// var overlay = document.getElementById('overlay');
+// var fecharBtn = document.getElementById('fechar-btn');
 
-agendarBtn.addEventListener('click', function () {
-    overlay.style.display = 'block'; // Exibe a tela de sobreposição ao clicar no botão "Agendar"
-});
+// agendarBtn.addEventListener('click', function () {
+//     overlay.style.display = 'block'; // Exibe a tela de sobreposição ao clicar no botão "Agendar"
+// });
 
-fecharBtn.addEventListener('click', function () {
-    overlay.style.display = 'none'; // Oculta a tela de sobreposição ao clicar no botão "Fechar"
-});
+// fecharBtn.addEventListener('click', function () {
+//     overlay.style.display = 'none'; // Oculta a tela de sobreposição ao clicar no botão "Fechar"
+// });
 
 
-//mudar nomes local 2
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
 
 
 
