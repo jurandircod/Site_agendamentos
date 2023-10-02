@@ -1,8 +1,8 @@
 <?php
-define("HOST", "localhost");
-define("USER", "root");
-define("PASSWD", "jurandir1965");
-define("DBname", "mydb");
+@define("HOST", "localhost");
+@define("USER", "root");
+@define("PASSWD", "");
+@define("DBname", "agendamentos");
 
 $conn = new mysqli(HOST, USER, PASSWD, DBname); //conecta ao banco de dados.
 
