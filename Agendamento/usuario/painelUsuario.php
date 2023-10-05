@@ -2,6 +2,10 @@
 include("../protected/protected.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+include('../agendamento/agendar.php');
+if (isset($_POST['enviar'])) {
+    agendar();
+}
 
 ?>
 
@@ -17,7 +21,7 @@ ini_set('display_startup_errors', 1);
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="shortcut icon" href="../imagens/logoCidade.jpeg" type="image/x-icon">
 
-    <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -32,12 +36,6 @@ ini_set('display_startup_errors', 1);
             <i class="bi bi-list-task"></i>
         </div>
         <ul>
-            <li class="item-menu">
-                <a href="../index.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Teste">
-                    <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
-                    <span class="txt-link">Voltar</span>
-                </a>
-            </li>
 
 
             <li class="item-menu">
@@ -51,6 +49,12 @@ ini_set('display_startup_errors', 1);
                 <a href="?page=AgUsuarios" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Verificar Agendamentos">
                     <span class="icon"><i class="bi bi-calendar-event"></i></span>
                     <span class="txt-link"></span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="../index.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Todos os horarios">
+                    <span class="icon"><i class="bi bi-calendar3"></i></span>
+                    <span class="txt-link">Voltar</span>
                 </a>
             </li>
             <li class="item-menu">
@@ -90,7 +94,7 @@ ini_set('display_startup_errors', 1);
                 <div class="modal-body">
 
                     <img id="imgsimbolo" src="../imagens/logoCidade.jpeg" alt="">
-                    <form action="../agendamento/agendar.php" method="post">
+                    <form action="" method="post">
                         <div class="name mt-3">
                             <label for="inputEmail4" class="form-label">Seu nome completo:</label>
                             <input type="text" name="nameUser" class="form-control" placeholder="Digite seu nome completo" id="">

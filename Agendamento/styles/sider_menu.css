@@ -16,7 +16,7 @@ aside.menu-lateral{
     box-shadow: 3px 0 0 #194d13;
     position: fixed;
     overflow: hidden;
-    transition: .3s;
+    z-index: 99;
 }
  /* aside.menu-lateral.item-menu:hover{
     width: 250px !important;
