@@ -37,6 +37,7 @@ $paineis = new paineis();
                         </a>
                     </li>
                 </ul>
+
                 <span class="navbar-text">
                     <a class="nav-link p-3 active" aria-current="page" href="./usuario/loginUsuario.php">
                         <?php if (!isset($_SESSION['id'])) {
@@ -52,10 +53,15 @@ $paineis = new paineis();
     </nav>
     <!-- Agendamentos-->
 
-    <div class="h1 mt-3">
+
+    <!--texto central-->
+    <br>
+    <br>
+    <div class="">
         <h1>REALIZE SEUS AGENDAMENTOS</h1>
     </div>
-
+    
+    <!--cards-->
     <section class="" style="list-style: none;">
         <div class="container">
             <div class="card">
@@ -95,11 +101,11 @@ $paineis = new paineis();
                     // }
 
                     ?>
-                    
-                        <button type="button" name="enviar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Agendar
-                        </button>
-                    
+
+                    <button type="button" name="enviar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Agendar
+                    </button>
+
                 </div>
             </div>
 
@@ -175,20 +181,19 @@ $paineis = new paineis();
             </div>
         </div>
     </section>
-
-    <!--Formulário de agendamento-->
-
-
-    <!--fim Formulário de agendamento-->
-
-
+   
     <script>
         function alerta() {
             alert("Agendamento realizado com sucesso")
         }
     </script>
 
-    <!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary"
+        data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        data-bs-title="This top tooltip is themed via CSS variables.">
+  Custom tooltip
+</button>
     <!-- Button trigger modal -->
 
     <!-- Modal -->
@@ -246,6 +251,17 @@ $paineis = new paineis();
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 </body>
 
 

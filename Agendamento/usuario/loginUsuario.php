@@ -11,6 +11,7 @@ include('../protected/autenticarUsuario.php');
 
 //função que conecta o usuario à conta dele
 conectar();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +20,11 @@ conectar();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="..//styles/sider_menu.css">
     <link rel="stylesheet" href="../styles/cadastroUsuario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 </head>
 
 
@@ -49,16 +51,25 @@ conectar();
     </form>
 
     <aside class="menu-lateral">
-        <?php include("./sider_menu.php"); ?>
-
-        <li class="item-menu">
-            <a href="./cadastroUsuario.php">
-                <span class="icon"><i class="bi bi-person-lines-fill"></i></span>
-                <span class="txt-link">Cadastrar</span>
-            </a>
-        </li>
+        <div class="btn-expandir">
+            <i class="bi bi-list-task"></i>
+        </div>
+        <ul>
+            <li class="item-menu">
+                <a href="./cadastroUsuario.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Cadastre seu usuario">
+                    <span class="icon"><i class="bi bi-person-lines-fill"></i></span>
+                    <span class="txt-link">Cadastrar</span>
+                </a>
+            </li>
         </ul>
     </aside>
+
+    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
 
 
 </body>

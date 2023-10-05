@@ -2,6 +2,10 @@
 function cadastrar()
 {
     include('../conexao/config.php');
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+
     if (isset($_POST["enviar"])) {
 
         // verificar se todos os campos estão preenchidos
@@ -11,21 +15,36 @@ function cadastrar()
             $email = $_POST["email"];
             $senha = $_POST["senha"];
 
-            //verificar se o campo email já existe
-            $sql = "SELECT * FROM usuarios WHERE email ='$email'";
-            $query = $conn->query($sql);
+            $hash_senha = password_hash($senha, PASSWORD_BCRYPT);
 
-            $rowsEmails = $query->num_rows;
-            if ($rowsEmails >= 1) {
-                echo "Email já existente selecione outro email";
+            // Verificar se o campo email já existe
+            $sql = "SELECT * FROM usuarios WHERE email = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows >= 1) {
+                echo "Email já existente, selecione outro email.";
             } else {
-                $login_user = $conn->prepare("INSERT INTO usuarios (nome, email, senha) VALUE (?, ?, ?)");
-                $login_user->bind_param("sss", $nome, $email, $senha);
-                $login_user->execute();
+                // Inserir o novo usuário com a senha criptografada
+                $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("sss", $nome, $email, $hash_senha);
+
+                if ($stmt->execute()) {
+                    echo "<div class='modal-dialog modal-dialog-centered'>
+                    Cadastro realizado com sucesso
+                  </div>";
+                } else {
+                    echo "Erro ao registrar o usuário: " . $stmt->error;
+                }
             }
         } else {
-            echo "Preencha todos os campos";
+            echo "Preencha todos os campos.";
         }
+
+        $stmt->close();
+        $conn->close();
     }
 }
-?>
