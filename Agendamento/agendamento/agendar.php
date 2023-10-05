@@ -1,10 +1,14 @@
+
+
 <?php
+
 function agendar()
 {
+    include('../agendamento/alertaSucesso.php');
     include('../conexao/config.php');
     include('../protected/protected.php');
-    
-    
+
+
     $horaInicio = $_POST['horaInicio'];
     $horaFim = $_POST['horaFim'];
     $nomeUser = $_POST['nameUser'];
@@ -15,7 +19,7 @@ function agendar()
     // $newEnd = new DateTime($horaFim);
 
     // Consulta SQL para verificar conflitos nos horários
-    
+
     $query = "SELECT * FROM tb_agendamentos WHERE (hora_inicio <= ? AND hora_fim >= ?) AND dia = '$dia'";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ss', $horaFim, $horaInicio); // 'ss' indica que são strings
@@ -34,20 +38,14 @@ function agendar()
         $stmtInsert->bind_param("issss", $nomeUser, $dia, $horaInicio, $horaFim, $userId);
 
         if ($stmtInsert->execute()) {
-            echo "<script>alerta(); <script>";
+            echo "";
         } else {
             echo "Erro na inserção: " . $stmtInsert->error;
         }
-
-        $stmt->close();
     }
 ?>
 
-    <script>
-        function alerta() {
-            alert("Agendamento realizado com sucesso")
-        }
-    </script>
+
 <?php
 
 }
