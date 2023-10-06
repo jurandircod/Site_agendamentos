@@ -12,15 +12,21 @@ aside.menu-lateral{
     width: 60px;
     height: 100%;
     background:#202020 ;
-    padding: 40px 0 30px 2%;
+    padding: 40px 0 30px 20px;
     box-shadow: 3px 0 0 #194d13;
     position: fixed;
     overflow: hidden;
-    transition: .3s;
+    z-index: 99;
 }
-aside.menu-lateral:hover{
+ /* aside.menu-lateral.item-menu:hover{
     width: 250px !important;
 }
+
+ul li.item-menu a:hover{
+    width: 250px !important;
+   
+} */
+
 .btn-expandir{
     margin-bottom: 20px;
     width: 100%;
@@ -39,6 +45,7 @@ ul{
     list-style: none;
     padding-left: 0rem !important;
 }
+
 ul li.item-menu a{
     color: white;
     text-decoration: none;
@@ -57,10 +64,10 @@ l li.item-menu a .icon > i{
     font-size: 30px;
 }
 
-ul li.item-menu{
+/* ul li.item-menu{
     transition: .2s;
 }
 ul li.item-menu:hover{
     background: #57689f !important;
     border-radius: 10px;
-}
+} */

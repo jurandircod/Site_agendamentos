@@ -2,6 +2,10 @@
 function cadastrar()
 {
     include('../conexao/config.php');
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+
     if (isset($_POST["enviar"])) {
 
         // verificar se todos os campos estão preenchidos
@@ -32,8 +36,6 @@ function cadastrar()
                     echo "<div class='modal-dialog modal-dialog-centered'>
                     Cadastro realizado com sucesso
                   </div>";
-                              
-                
                 } else {
                     echo "Erro ao registrar o usuário: " . $stmt->error;
                 }
@@ -46,4 +48,3 @@ function cadastrar()
         $conn->close();
     }
 }
-?>
