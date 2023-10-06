@@ -66,9 +66,8 @@ function agendar()
         $stmtInsert->bind_param("issss", $nomeUser, $dia, $horaInicio, $horaFim, $userId);
 
         if ($stmtInsert->execute()) {
-?>          <script>
-                $(document).ready(function() 
-                {
+?> <script>
+                $(document).ready(function() {
                     mostrarMensagem();
                 });
             </script> <?php
@@ -77,4 +76,4 @@ function agendar()
                     }
                 }
             }
-                        ?>
+?>
