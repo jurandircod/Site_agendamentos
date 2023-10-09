@@ -149,4 +149,50 @@
                     <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
                 </div>
             </div>
+            
+            <div class="card">
+                <img src="https://umuarama.pr.gov.br/files/Noticias/capa/1690575935.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sala de reuniões</h5>
+                    <p class="card-text"></p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">horario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>19/10/2023</td>
+                                <td>10:20 - 15:40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img src="https://umuarama.pr.gov.br/files/Noticias/capa/1690575935.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sala de reuniões</h5>
+                    <p class="card-text"></p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">horario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>19/10/2023</td>
+                                <td>10:20 - 15:40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
+                </div>
+            </div>
         </div>
