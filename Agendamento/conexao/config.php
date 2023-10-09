@@ -1,4 +1,5 @@
 <?php
+
 @define("HOST", "localhost");
 @define("USER", "root");
 @define("PASSWD", "jurandir1965"); // lembrar de mudar a psswd no ubuntu

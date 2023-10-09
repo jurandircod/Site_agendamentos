@@ -34,8 +34,14 @@ function conectar()
 
                     $_SESSION['id'] = $usuario['id'];
                     $_SESSION['nome'] = $usuario['nome'];
+                    $_SESSION['permissoes'] = $usuario['permissoes'];
 
-                    header("location: painelUsuario.php");
+                    if($_SESSION['permissoes'] == 1){
+                        echo '<script>window.location.href = "./painelUsuario.php";</script>';
+                    }elseif($_SESSION['permissoes'] == 2){
+                        echo '<script>window.location.href = "../painelAdministrador/painelAdministrador.php";</script>';
+                    }
+                
                 } else {
                     echo "Senha está incorreta";
                 }

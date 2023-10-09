@@ -1,10 +1,10 @@
 <?php
 include("../conexao/cadastrar.php");
-cadastrar();
-include('./protected/autenticarUsuario.php');
+include('../protected/autenticarUsuario.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-
+autenticarUser();
+cadastrar();
 ?>
 
 <!DOCTYPE html>

@@ -32,3 +32,15 @@ form .container {
     width: 160px;
 
 }
+
+@media screen and (max-width: 767px){
+    .form-usuario{
+    
+    margin-top: 80px;
+    margin-right: 120px;
+    margin-left: 60px;
+    
+    position: absolute;
+    border-radius: 20px;
+    }
+}

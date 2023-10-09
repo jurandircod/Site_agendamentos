@@ -3,10 +3,11 @@ include("../protected/protected.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 include('../agendamento/agendar.php');
+
 if (isset($_POST['enviar'])) {
     agendar();
 }
-
+autenticar();
 ?>
 
 <!DOCTYPE html>
@@ -15,26 +16,26 @@ if (isset($_POST['enviar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Agendamentos</title>
     <link rel="stylesheet" href="../styles/sider_menu.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="shortcut icon" href="../imagens/logoCidade.jpeg" type="image/x-icon">
-
     <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
 </head>
 
 <body>
 
 
-
+    <?php
+    include("../class/paineis_Index.php");
+    $user = new paineis();
+    ?>
     <aside class="menu-lateral">
 
-        <div class="btn-expandir" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
+        <!-- <div class="btn-expandir" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
             <i class="bi bi-list-task"></i>
-        </div>
+        </div> -->
         <ul>
 
 
@@ -48,17 +49,17 @@ if (isset($_POST['enviar'])) {
             <li class="item-menu">
                 <a href="?page=AgUsuarios" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Verificar Agendamentos">
                     <span class="icon"><i class="bi bi-calendar-event"></i></span>
-                    <span class="txt-link"></span>
+                    <span class="txt-link">Verificar meus agendamentos</span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="../index.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Todos os horarios">
-                    <span class="icon"><i class="bi bi-calendar3"></i></span>
-                    <span class="txt-link">Voltar</span>
+                    <span class="icon"><i class="bi bi-person-square"></i></span>
+                    <span class="txt-link"><?php $user->painelUser(); ?></span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../conexao/logout.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sair">
+                <a href="?page=logout" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sair">
                     <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
                     <span class="txt-link">Sair</span>
                 </a>
@@ -66,7 +67,9 @@ if (isset($_POST['enviar'])) {
         </ul>
     </aside>
 
-
+    <header class="text-center texto_agendamentos">
+        <img src="../imagens/logoo.png" alt="">
+    </header>
 
     <?php
     switch (@$_REQUEST['page']) {
@@ -75,6 +78,10 @@ if (isset($_POST['enviar'])) {
             break;
         case 'agendar';
             include('./cardsAgendar.php');
+            break;
+        case "logout";
+            include("../conexao/logout.php");
+            destroirsessao();
             break;
         default;
             include("./cardsAgendar.php");

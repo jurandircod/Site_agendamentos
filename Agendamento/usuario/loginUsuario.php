@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 //conexões com o banco
 include('../conexao/config.php');
 
@@ -8,9 +10,10 @@ include('../conexao/login.php');
 //verifica se o usuario já está logado e o redireciona para o painel de controle
 include('../protected/autenticarUsuario.php');
 
-
 //função que conecta o usuario à conta dele
 conectar();
+autenticarUser();
+
 
 ?>
 <!DOCTYPE html>
