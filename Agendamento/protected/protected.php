@@ -13,7 +13,9 @@ if (!isset($_SESSION))
 function autenticar()
 {
     if (!isset($_SESSION['id'])) {
+        echo "<br><a href='../usuario/loginUsuario.php'>Logar com sua conta</a>";
         die(" você não pode acessar sem estar logado");
+        
     }
 }
 
