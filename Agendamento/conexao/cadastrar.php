@@ -5,11 +5,8 @@ function cadastrar()
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-
-    if (isset($_POST["enviar"])) {
-
-        // verificar se todos os campos estão preenchidos
-        if (strlen($_POST["nome"]) > 0 && strlen($_POST["email"]) > 0 && strlen($_POST["senha"]) > 0) {
+         // verificar se todos os campos estão preenchidos
+        
 
             $nome = $_POST["nome"];
             $email = $_POST["email"];
@@ -40,11 +37,9 @@ function cadastrar()
                     echo "Erro ao registrar o usuário: " . $stmt->error;
                 }
             }
-        } else {
-            echo "Preencha todos os campos.";
-        }
+        
 
         $stmt->close();
         $conn->close();
-    }
+   
 }

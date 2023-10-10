@@ -6,7 +6,7 @@
 }
 
 body {
-  
+
   height: 100vh;
 }
 
@@ -14,7 +14,7 @@ body {
 
 
 .container-cards {
-  margin-left: 120px;
+  margin-left: 310px;
   margin-right: 60px;
   display: flex;
   flex-wrap: wrap;
@@ -25,9 +25,10 @@ body {
 
 
 .card {
- z-index: 1;
+  z-index: 1;
   width: 300px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 
 .logopf {
   height: 100px;
@@ -54,16 +55,59 @@ h1 {
   text-align: center;
 }
 
-section div img{
+section div img {
   height: 180px;
 }
-#imgsimbolo{
+
+#imgsimbolo {
   height: 200px;
   width: 200px;
 }
 
-.container-usuarios{
-  margin-left: 120px;
+.container-usuarios {
+  margin-left: 310px;
   margin-right: 60px;
-  
+}
+
+.texto_agendamentos {
+  margin-left: 250px;
+}
+
+.texto_horarios {
+  margin-left: 250px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .container-cards {
+    width: 100%;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    border-color: 10px solid black;
+  }
+
+
+  .container-usuarios {
+
+    margin-left: 60px;
+    margin-right: 0px;
+  }
+
+
+  .card {
+    width: 80%;
+  }
+
+  .texto_agendamentos {
+    margin-left: 90px;
+  }
+
+  .texto_horarios {
+    margin-left: 90px;
+  }
+
 }

@@ -11,7 +11,7 @@ body {
 
 .form-usuario {
     margin-top: 80px;
-    margin-left: 35%;
+    margin-left: 33.5%;
     position: absolute;
     width: 470px;
     height: 500px;
@@ -31,4 +31,16 @@ form .container {
 .logoPrefeitura {
     width: 160px;
 
+}
+
+@media screen and (max-width: 767px){
+    .form-usuario{
+    
+    margin-top: 80px;
+    margin-right: 120px;
+    margin-left: 60px;
+    
+    position: absolute;
+    border-radius: 20px;
+    }
 }

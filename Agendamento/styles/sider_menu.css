@@ -1,73 +1,85 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box; /* Corrija a propriedade aqui para 'border-box' */
     font-family: 'Outfit', sans-serif;
 }
 
 body {
     height: 100vh;
 }
-aside.menu-lateral{
-    width: 60px;
+
+aside.menu-lateral {
+    width: 250px;
     height: 100%;
-    background:#202020 ;
+    background: #202020;
     padding: 40px 0 30px 20px;
     box-shadow: 3px 0 0 #194d13;
     position: fixed;
-    overflow: hidden;
     z-index: 99;
-}
- /* aside.menu-lateral.item-menu:hover{
-    width: 250px !important;
+    transition: width 0.2s; /* Adicione uma transição para criar um efeito suave de largura */
 }
 
-ul li.item-menu a:hover{
-    width: 250px !important;
-   
-} */
+/* Quando o menu é expandido */
+.menu-lateral.expandido {
+    width: 250px;
+}
 
-.btn-expandir{
+.btn-expandir {
     margin-bottom: 20px;
     width: 100%;
     padding-left: 2%;
-
 }
 
-.btn-expandir > i{
-color: white;
-font-size: 24px;
-cursor: pointer;
+.btn-expandir > i {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-ul{
+ul {
     height: 100%;
     list-style: none;
     padding-left: 0rem !important;
 }
 
-ul li.item-menu a{
+ul li.item-menu a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     padding: 20px 2%;
     display: flex;
     margin-bottom: 20px;
     line-height: 20px;
 }
 
-ul li.item-menu a .txt-link{
+ul li.item-menu a .txt-link {
     margin-left: 40px;
 }
 
-l li.item-menu a .icon > i{
-    font-size: 30px;
+
+ul li.item-menu a .icon > i {
+    font-size: 20px;
 }
 
-/* ul li.item-menu{
+ul li.item-menu {
     transition: .2s;
 }
-ul li.item-menu:hover{
+
+ul li.item-menu:hover {
     background: #57689f !important;
     border-radius: 10px;
-} */
+}
+
+/* Media query para dispositivos móveis */
+@media screen and (max-width: 767px) {
+    aside.menu-lateral {
+        width: 60px;
+        padding: 40px 0 30px 10px; /* Ajuste o padding para melhorar a aparência em dispositivos móveis */
+    }
+
+    /* Esconda o texto do menu quando recolhido */
+    .menu-lateral:not(.expandido) ul li.item-menu a .txt-link {
+        display: none;
+    }
+}

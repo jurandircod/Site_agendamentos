@@ -1,6 +1,8 @@
 <?php
-include("../protected/protected.php");
+include("../protected/autenticar.php");
+include("../conexao/logout.php");
 autenticarAdministrador();
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +17,6 @@ autenticarAdministrador();
     <link rel="shortcut icon" href="../imagens/logoCidade.jpeg" type="image/x-icon">
     <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
 </head>
 
 <body>
@@ -29,7 +30,7 @@ autenticarAdministrador();
             <li class="item-menu">
                 <a href="../index.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Teste">
                     <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
-                    <span class="txt-link">Voltar</span>
+                    <span class="txt-link">Listar todos os agendamentos</span>
                 </a>
             </li>
 
@@ -37,7 +38,7 @@ autenticarAdministrador();
             <li class="item-menu">
                 <a href="?page=agendar" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Início">
                     <span class="icon"><i class="bi bi-menu-button-wide"></i></span>
-                    <span class="txt-link">Início</span>
+                    <span class="txt-link">Cadastrar novos locais</span>
                 </a>
             </li>
 

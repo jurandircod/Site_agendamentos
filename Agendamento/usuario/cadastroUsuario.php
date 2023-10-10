@@ -1,9 +1,25 @@
 <?php
 include("../conexao/cadastrar.php");
-cadastrar();
-include('./protected/autenticarUsuario.php');
+include('../protected/autenticarUsuario.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+autorizar_Entrada();
+
+
+function verificarCampos(){
+    if (strlen($_POST["nome"]) > 0 && strlen($_POST["senha"]) > 0){
+        
+    cadastrar();
+    }else{
+       include('../erros/erroCadastrar.php');
+       echo "<script>
+       $(document).ready(function() {mostrarMensagem();});</script>";
+    }
+}
+
+if(isset($_POST['enviar'])){
+    verificarCampos();
+}
 
 ?>
 

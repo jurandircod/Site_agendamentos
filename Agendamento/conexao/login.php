@@ -1,12 +1,16 @@
 <?php
 function conectar()
 {
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     include('../conexao/config.php');
     //verifica se algum campo foi enviado
     if (isset($_POST['email']) || isset($_POST['senha'])) {
         //verifica se o campodo email ou do telefone está preenchido
         if (strlen($_POST['email']) == 0) {
-            echo "preencha o email";
+            include('../erros/erroEmailVazio.php');
+            echo "<script> $(document).ready(function() {mostrarMensagem();});</script>";
         } else if (strlen($_POST['senha']) == 0) {
             echo "preencha a senha";
         } else {
@@ -23,31 +27,27 @@ function conectar()
 
             //inicia sessão do usuario cadastradp
             if ($quantidade == 1) {
-                
+
                 $usuario = $sql_query->fetch_assoc();
 
                 if (password_verify($senha, $usuario['senha'])) {
-
-                    if (!isset($_SESSION)) {
-                        session_start();
-                    }
-
+                    
                     $_SESSION['id'] = $usuario['id'];
                     $_SESSION['nome'] = $usuario['nome'];
-                    $_SESSION['permissao'] = $usuario['permissao'];
+                    $_SESSION['permissoes'] = $usuario['permissoes'];
 
-                    if($_SESSION['permissao'] == 1){
-                    header("location: painelUsuario.php");
-                    }elseif($_SESSION['permissao'] == 2){
-                    header("location: \Site_agendamentos-main (2)\Site_agendamentos-main\Agendamento\painelAdministrador\painelAdministrador.php");
+                    if ($_SESSION['permissoes'] == 1) {
+                        echo '<script>window.location.href = "./painelUsuario.php";</script>';
+                    } elseif ($_SESSION['permissoes'] == 2) {
+                        echo '<script>window.location.href = "../painelAdministrador/painelAdministrador.php";</script>';
                     }
-                
                 } else {
-                    echo "Senha está incorreta";
+                    include('../erros/erroLoginIncorreto.php');
+                    echo "<script> $(document).ready(function() {mostrarMensagem();});</script>";
                 }
-            
             } else {
-                echo "falha ao logar! email incorreto";
+                include('../erros/erroLoginIncorreto.php');
+                echo "<script> $(document).ready(function() {mostrarMensagem();});</script>";
             }
         }
     }
