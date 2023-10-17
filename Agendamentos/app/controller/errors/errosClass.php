@@ -84,12 +84,6 @@ $mensagensDeErro = [
     ]
 ];
 
-// Exemplo de uso:
-
-
-// Exibir erro de agendamento
-
-
 
 ?> 
 

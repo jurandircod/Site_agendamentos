@@ -10,23 +10,25 @@ function agendar()
     $nomeUser = $_POST['nameUser'];
     $dia = $_POST['dia'];
     $userId = $_SESSION['id'];
+  
+  
+    $date_time_inicio = new DateTime($dia . $horaInicio);
+    $date_time_fim = new DateTime($dia . $horaFim);
 
-    $date_hora_inicio = $dia . $horaInicio;
-    $date_hora_fim = $dia . $horaFim;  
-
-    $timezone = new DateTimeZone('America/Sao_Paulo');
-    date_default_timezone_set("America/Sao_Paulo");
-
+    $date_fim = $date_time_fim->format('Y-m-d H:i:s');
+    $date_inicio = $date_time_inicio->format('Y-m-d H:i:s');
+    
     // Consulta SQL para verificar conflitos nos horários
 
     $query = "SELECT * FROM tb_agendamentos WHERE (date_time_inicio <= ? AND date_time_fim >= ?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ss', $date_hora_inicio, $date_hora_fim); // 'ss' indica que são strings
+    $stmt->bind_param('ss', $date_inicio, $date_fim); // 'ss' indica que são strings
     $stmt->execute();
 
     $result = $stmt->get_result();
-    // Verifique se há conflitos
-    if ($result->num_rows > 0) {
+   
+    // Verifica se há conflitos
+    if ($result->num_rows) {
        
         include('../../controller/errors/errosClass.php');
         $erroAgendar = new PainelDeErro($mensagensDeErro[1]['mensagem'], $mensagensDeErro[1]['tipo']);
@@ -38,7 +40,7 @@ function agendar()
 
         $sql = "INSERT INTO tb_agendamentos (nome, date_time_inicio, date_time_fim, id_usuario) VALUES (?, ?, ?, ?)";
         $stmtInsert = $conn->prepare($sql);
-        $stmtInsert->bind_param("ssss", $nomeUser, $date_hora_inicio, $date_hora_fim, $userId);
+        $stmtInsert->bind_param("ssss", $nomeUser, $date_inicio, $date_fim, $userId);
 
         if ($stmtInsert->execute()) {
             

@@ -1,9 +1,14 @@
 <br>
 <div class="texto_agendamentos mb-4">
-    <h1>REALIZE SEUS AGENDAMENTOS</h1>
+    <h1>Realize seus agendamentos</h1>
 </div>
 
+<?php
+include('../../config/config.php');
 
+$sql = "SELECT * FROM tb_agendamentos";
+$result = $conn->query('SELECT * FROM tb_agendamentos')
+?>
 
 <div class="container-cards">
     <div class="card">
@@ -12,19 +17,30 @@
             <h5 class="card-title">Anfiteatro</h5>
             <p class="card-text"></p>
 
-            <table class="table">
+            <table class="table table table-striped table-hover table-bordered text-center">
                 <thead>
                     <tr>
-                        <th scope="col">Data</th>
-                        <th scope="col">horario</th>
+                        <th scope="col">Dias indisponíveis</th>
                         <!--Outras colunas-->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>19/10/2023</td>
-                        <td>10:20 - 15:40</td>
-                    </tr>
+                    <?php while ($horarios = $result->fetch_assoc()) : ?>
+                        <?php
+                        $data_inicio = new DateTime($horarios['date_time_inicio']);
+                        $hora_inicio = $data_inicio->format('H:i');
+
+                        $dia = $data_inicio->format('d/m/y');
+
+                        $data_final = new DateTime($horarios['date_time_fim']);
+                        $hora_fim = $data_final->format('H:i');
+
+                        ?>
+                        <tr>
+                            <td><?php echo $dia ?> <?php echo $hora_inicio ?> - <?php echo $hora_fim ?></td>
+
+                        </tr>
+                    <?php endwhile; ?>
                     <!-- Outras linhas... -->
                 </tbody>
 

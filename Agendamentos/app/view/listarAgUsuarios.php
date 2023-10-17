@@ -29,11 +29,11 @@ $result = $conn->query($sql_query);
             <tbody class="table">
                 <tr>
                     <?php 
-                    $dataHora = new DateTime($agendamento['dia']);
-                    $horaFim = new DateTime($agendamento['hora_fim']);
-                    $horaInicio = new DateTime($agendamento['hora_inicio']);
+                    $dataHora = new DateTime($agendamento['date_time_inicio']);
+                    $horaFim = new DateTime($agendamento['date_time_fim']);
+                    $horaInicio = new DateTime($agendamento['date_time_inicio']);
                     
-                    $diaFormatado = $dataHora->format('Y/d/m');
+                    $diaFormatado = $dataHora->format('d/m/y');
                     $horaFimFormatado = $horaFim->format('H:i');
                     $horaInicioFormatado = $horaInicio->format('H:i');
                     ?>
@@ -45,11 +45,12 @@ $result = $conn->query($sql_query);
 
                     <td>
                         
-                            <a onclick="alerta()" href="alterar_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn btn-warning me-4" style="background-color:yellow;" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="alterar Agendamento">
+                            <a onclick="alerta()" href="alterar_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn me-4" style="background-color:#ccffcc
+;" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="alterar Agendamento">
                                 <i class="bi bi-calendar-plus"></i>
                             </a>
 
-                            <a onclick="alerta()" href="../../controller/agendamentos/excluir_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn btn-danger" style="background-color:red;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir agendamento">
+                            <a onclick="alerta()" href="../../controller/agendamentos/excluir_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn" style="background-color:#ff6666;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir agendamento">
                                 <i class="bi bi-calendar-x-fill"></i>
                             </a>
                         

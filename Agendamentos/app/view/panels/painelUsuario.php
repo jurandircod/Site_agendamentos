@@ -9,6 +9,7 @@ ini_set('display_startup_errors', 1);
 if (isset($_POST['enviar'])) {
     agendar();
 }
+$user = new paineis();
 autenticar();
 ?>
 
@@ -21,23 +22,18 @@ autenticar();
     <title>Agendamentos</title>
     <link rel="stylesheet" href="../../../public/css/sider_menu.css">
     <link rel="stylesheet" href="../../../public/css/style.css">
-    <link rel="shortcut icon" href="/../../../public/img/logoCidade.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../public//img//logoCidade.jpeg" type="image/x-icon">
     <link href="../../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
 
-
-    <?php
-    
-    $user = new paineis();
-    ?>
     <aside class="menu-lateral">
 
-        <!-- <div class="btn-expandir" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
-            <i class="bi bi-list-task"></i>
-        </div> -->
+        <div class="ms-5 mb-4" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
+            <img class="text-center" id="logo" src="../../../public//img//logoCidade (3).png">
+        </div> 
         <ul>
 
 
@@ -70,7 +66,7 @@ autenticar();
     </aside>
 
     <header class="text-center texto_agendamentos">
-        <img src="../imagens/logoo.png" alt="">
+        <img id= "logopf" class="logo_prefeitura" src="../../../public//img//logoCidade.jpeg" alt="">
     </header>
 
     <?php
