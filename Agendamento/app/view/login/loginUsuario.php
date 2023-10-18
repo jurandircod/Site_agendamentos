@@ -5,12 +5,12 @@ ini_set('display_startup_errors', 1);
 
 
 //configurações de login
-include('../conexao/login.php');
+include('C:\xampjura\htdocs\Site_agendamentos-main (2)\Site_agendamentos-main\site\app\model\login.php');
 
 //verifica se o usuario já está logado e o redireciona para o painel de controle
 
 
-include('../protected/autorizar_entrada.php');
+include('C:\xampjura\htdocs\Site_agendamentos-main (2)\Site_agendamentos-main\site\app\controller\protected\autorizar_entrada.php');
 
 //função que conecta o usuario à conta dele
 conectar();
@@ -25,8 +25,8 @@ autorizar_Entrada();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="..//styles/sider_menu.css">
+    <link href="../site/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="C:\xampjura\htdocs\Site_agendamentos-main (2)\Site_agendamentos-main\site\public\css\sider_menu.css">
     <link rel="stylesheet" href="../styles/cadastroUsuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 

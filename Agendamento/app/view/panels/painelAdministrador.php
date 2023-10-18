@@ -1,6 +1,6 @@
 <?php
 include("../protected/autenticar.php");
-include("../conexao/logout.php");
+include("../site/app/controller/");
 autenticarAdministrador();
 
 ?>

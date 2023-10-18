@@ -1,14 +1,14 @@
 <?php
-function autenticarUser()
+function autorizar_Entrada()
 {
-    if (!isset($_SESSION['id'])) {
+    if (!isset($_SESSION)) {
         session_start();
     }
 
     if (isset($_SESSION['permissoes'])) {
         if (isset($_SESSION["id"]) && $_SESSION["permissoes"] == 1) {
             header("location: ../usuario/painelUsuario.php");
-        } elseif (isset($_SESSION["id"]) && $_SESSION["permissoes"] == 2) {
+        } elseif ($_SESSION["permissoes"] == 2) {
             header("location: ../painelAdministrador/painelAdministrador.php");
         }
     }
