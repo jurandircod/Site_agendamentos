@@ -5,16 +5,25 @@ ini_set('display_startup_errors', 1);
 
 
 //configurações de login
-include('C:\xampjura\htdocs\Site_agendamentos-main (2)\Site_agendamentos-main\site\app\model\login.php');
+include('../../model/users/login.php');
 
 //verifica se o usuario já está logado e o redireciona para o painel de controle
+include('../../controller/protected/autorizar_entrada.php');
 
 
-include('C:\xampjura\htdocs\Site_agendamentos-main (2)\Site_agendamentos-main\site\app\controller\protected\autorizar_entrada.php');
+
 
 //função que conecta o usuario à conta dele
-conectar();
-autorizar_Entrada();
+
+if (isset($_POST['enviar'])) {
+    if (strlen($_POST['email']) > 0 && strlen($_POST['senha']) > 0) {
+        conectar();
+    } else {
+        echo "preencha todos os campos";
+    }
+}
+//autorizar_Entrada();
+
 
 
 ?>
@@ -25,9 +34,9 @@ autorizar_Entrada();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../site/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="C:\xampjura\htdocs\Site_agendamentos-main (2)\Site_agendamentos-main\site\public\css\sider_menu.css">
-    <link rel="stylesheet" href="../styles/cadastroUsuario.css">
+    <link href="../../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../public/css/sider_menu.css">
+    <link rel="stylesheet" href="../../../public/css/cadastroUsuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -36,7 +45,7 @@ autorizar_Entrada();
 <body>
     <form class="form-usuario text-center" action="" method="post">
         <h3 class="mt-5">Faça seu login</h3>
-        <img class="logoPrefeitura" src="../imagens/logoCidade.jpeg" alt="">
+        <img class="logoPrefeitura" src="../../../public/img/logoCidade.jpeg" alt="">
 
         <div class="container mt-5">
             <div class="row mt-3">
@@ -49,19 +58,21 @@ autorizar_Entrada();
                 <input name="senha" class="form-control" type="password" placeholder="Digite sua senha">
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+            <button type="submit" name="enviar" class="btn btn-primary mt-3">Entrar</button>
 
 
         </div>
     </form>
 
     <aside class="menu-lateral">
-        <div class="btn-expandir">
-            <i class="bi bi-list-task"></i>
+        <div class="ms-5 mb-4" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
+        <h6>Prefeitura de umuarama</h6>      
+        <img class="text-center" id="logo" src="../../../public//img//logoCidade (3).png">
         </div>
+        
         <ul>
             <li class="item-menu">
-                <a href="./cadastroUsuario.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Cadastre seu usuario">
+                <a href="cadastroUsuario.php" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Cadastre seu usuario">
                     <span class="icon"><i class="bi bi-person-lines-fill"></i></span>
                     <span class="txt-link">Cadastrar</span>
                 </a>
@@ -69,7 +80,7 @@ autorizar_Entrada();
         </ul>
     </aside>
 
-    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

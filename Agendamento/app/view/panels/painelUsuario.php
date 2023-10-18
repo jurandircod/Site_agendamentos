@@ -1,12 +1,15 @@
 <?php
-include("../protected/autenticar.php");
+include("../../controller/protected/autenticar.php");
+include('../../controller/agendamentos/agendar.php');
+include("../../controller/showUsers.php");
+include("../../config/config.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-include('../agendamento/agendar.php');
 
 if (isset($_POST['enviar'])) {
     agendar();
 }
+$user = new paineis();
 autenticar();
 ?>
 
@@ -17,26 +20,22 @@ autenticar();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamentos</title>
-    <link rel="stylesheet" href="../styles/sider_menu.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="shortcut icon" href="../imagens/logoCidade.jpeg" type="image/x-icon">
-    <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../public/css/sider_menu.css">
+    <link rel="stylesheet" href="../../../public/css/style.css">
+    <link rel="shortcut icon" href="../../../public//img//logoCidade.jpeg" type="image/x-icon">
+    <link href="../../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
 
-
-    <?php
-    include("../class/paineis_Index.php");
-    $user = new paineis();
-    ?>
     <aside class="menu-lateral">
 
-        <!-- <div class="btn-expandir" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
-            <i class="bi bi-list-task"></i>
-        </div> -->
-        <ul>
+        <div class="ms-5 mb-4" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
+          
+        <img class="text-center" id="logo" src="../../../public//img//logoCidade (3).png">
+        </div> 
+        <ul class="mt-5">
 
 
             <li class="item-menu">
@@ -68,23 +67,23 @@ autenticar();
     </aside>
 
     <header class="text-center texto_agendamentos">
-        <img src="../imagens/logoo.png" alt="">
+        <img id= "logopf" class="logo_prefeitura" src="../../../public//img//logoCidade.jpeg" alt="">
     </header>
 
     <?php
     switch (@$_REQUEST['page']) {
         case 'AgUsuarios';
-            include('./listarAgUsuarios.php');
+            include('../listarAgUsuarios.php');
             break;
         case 'agendar';
-            include('./cardsAgendar.php');
+            include('../cardsAgendar.php');
             break;
         case "logout";
-            include("../conexao/logout.php");
+            include("../../controller/logout.php");
             destroirsessao();
             break;
         default;
-            include("./cardsAgendar.php");
+            include("../cardsAgendar.php");
     }
     ?>
 
@@ -100,7 +99,7 @@ autenticar();
                 </div>
                 <div class="modal-body">
 
-                    <img id="imgsimbolo" src="../imagens/logoCidade.jpeg" alt="">
+                    <img id="imgsimbolo" src="../../../public/img/logoCidade.jpeg" alt="">
                     <form action="" method="post">
                         <div class="name mt-3">
                             <label for="inputEmail4" class="form-label">Seu nome completo:</label>
@@ -115,10 +114,7 @@ autenticar();
                                     <option>DTI</option>
                                     <option>SAUDE</option>
                                     <option>JURIDICO</option>
-                                    <option>...</option>
-                                    <option>...</option>
-                                    <option>...</option>
-                                    <option>...</option>
+                                 
                                 </select>
                             </div>
 
@@ -151,7 +147,7 @@ autenticar();
     </div>
 
 
-    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

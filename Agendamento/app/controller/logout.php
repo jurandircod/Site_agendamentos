@@ -5,6 +5,6 @@ if(!isset($_SESSION)){
 }
 
 session_destroy();
-header("location: ../usuario/loginUsuario.php");
+header("location: ../../../login/loginUsuario.php");
 }
 ?>

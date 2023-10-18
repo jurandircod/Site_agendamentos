@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Corrija a propriedade aqui para 'border-box' */
-    font-family: 'Outfit', sans-serif;
+    
 }
 
 body {
@@ -10,11 +10,11 @@ body {
 }
 
 aside.menu-lateral {
-    width: 250px;
+    width: 230px;
     height: 100%;
     background: #202020;
-    padding: 40px 0 30px 20px;
-    box-shadow: 3px 0 0 #194d13;
+    padding: 20px 0 30px 0px;
+    box-shadow: 3px 0 0 #114115;
     position: fixed;
     z-index: 99;
     transition: width 0.2s; /* Adicione uma transição para criar um efeito suave de largura */
@@ -43,13 +43,20 @@ ul {
     padding-left: 0rem !important;
 }
 
+#logo{
+    height: 50px;
+    color: white;
+}
+
 ul li.item-menu a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     padding: 20px 2%;
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 10px;
     line-height: 20px;
 }
 
@@ -59,7 +66,7 @@ ul li.item-menu a .txt-link {
 
 
 ul li.item-menu a .icon > i {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 ul li.item-menu {
@@ -68,7 +75,6 @@ ul li.item-menu {
 
 ul li.item-menu:hover {
     background: #57689f !important;
-    border-radius: 10px;
 }
 
 /* Media query para dispositivos móveis */
@@ -78,6 +84,12 @@ ul li.item-menu:hover {
         padding: 40px 0 30px 10px; /* Ajuste o padding para melhorar a aparência em dispositivos móveis */
     }
 
+    ul li.item-menu a{
+        margin-left: 8px;
+    }
+    #logo{
+        display: none;
+    }
     /* Esconda o texto do menu quando recolhido */
     .menu-lateral:not(.expandido) ul li.item-menu a .txt-link {
         display: none;

@@ -2,11 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: 0;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
-
   height: 100vh;
 }
 
@@ -30,10 +29,10 @@ body {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.logopf {
-  height: 100px;
-
+#logopf {
+  height: 220px;
 }
+
 
 .navbar {
   display: flex;
@@ -44,11 +43,30 @@ body {
 
 
 
+#icone_alterar{
+  border-radius: 20px;
+  color: black;
+  transition: .2s;
+}
 
+#icone_excluir{
+  border-radius: 20px;
+  color: #f2f2cf;
+  transition: .2s;
+}
+
+
+#icone_excluir:hover{
+  color: #000000 !important;
+}
+
+#icone_alterar:hover{
+  color: #f2f2cf !important;
+  
+}
 
 .inline {
-  display: inline;
-
+  display: inline
 }
 
 h1 {
@@ -103,8 +121,10 @@ section div img {
   }
 
   .texto_agendamentos {
-    margin-left: 90px;
+    margin-left: 85px;
+    
   }
+
 
   .texto_horarios {
     margin-left: 90px;

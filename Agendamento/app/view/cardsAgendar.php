@@ -1,196 +1,67 @@
 <br>
-<div class="texto_agendamentos mb-4">
-    <h1>REALIZE SEUS AGENDAMENTOS</h1>
+<div class="texto_agendamentos mb-4 text-center">
+<h2><strong>Agendamentos</strong></h2>
 </div>
 
+<?php
+include('../../config/config.php');
+
+$sql = "SELECT * FROM tb_agendamentos";
+$result = $conn->query('SELECT * FROM tb_agendamentos');
 
 
-        <div class="container-cards">
-            <div class="card">
-                
-                <div class="card-body text-center">
-                    <h5 class="card-title">Anfiteatro</h5>
-                    <p class="card-text"></p>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                                <!--Outras colunas-->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                            <!-- Outras linhas... -->
-                        </tbody>
-
-                    </table>
-                   
-
-                    <button type="button" name="enviar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Agendar
-                    </button>
-
-                </div>
-            </div>
+?>
 
 
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Fundação cultural</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Datas </th>
-                                <th scope="col">horarios </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
+<div class="container-cards">
+    <div class="card">
 
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="fundacao" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
+        <div class="card-body text-center">
+            <h5 class="card-title"><strong>Anfiteatro</strong></h5>
+            <p class="card-text"></p>
 
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Sala de reuniões</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
+            <table class="table table table-striped table-hover table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Dias indisponíveis</th>
+                        <!--Outras colunas-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($horarios = $result->fetch_assoc()) : ?>
+                        <?php
+                        $data_inicio = new DateTime($horarios['date_time_inicio']);
+                        $hora_inicio = $data_inicio->format('H:i');
 
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Sala de reuniões</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Sala de reuniões</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
-        
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Sala de reuniões</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Sala de reuniões</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
-        
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Sala de reuniões</h5>
-                    <p class="card-text"></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>19/10/2023</td>
-                                <td>10:20 - 15:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button href="formularios.php" id="sala_de_reunioes" class="btn btn-primary">Agendar</button>
-                </div>
-            </div>
+                        $dia = $data_inicio->format('d/m/y');
+
+                        $data_final = new DateTime($horarios['date_time_fim']);
+                        $hora_fim = $data_final->format('H:i');
+
+                        ?>
+                        <tr>
+                            <td><?php echo $dia ?>  <br> <?php echo $hora_inicio ?> - <?php echo $hora_fim ?></td>
+
+                        </tr>
+                    <?php endwhile; ?>
+                    <!-- Outras linhas... -->
+                </tbody>
+
+            </table>
+
+
+            <button type="button" name="enviar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Agendar
+            </button>
         </div>
+       
+        
+    </div>
+
+
+
+
+
+    
+
+</div>

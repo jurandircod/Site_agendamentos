@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+include('../../config/config.php');
 
-include("../conexao/config.php");
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -27,6 +27,6 @@ if (isset($excluirAg)) {
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
-        header('location: painelUsuario.php?page=AgUsuarios');
+        header('location: ../../view/panels/painelUsuario.php?page=AgUsuarios');
     }
 }
