@@ -1,14 +1,26 @@
 <?php
 include("../../controller/protected/autenticar.php");
-include('../../controller/agendamentos/agendar.php');
+include('../../model/agendamentos/agendar.php');
 include("../../controller/showUsers.php");
 include("../../config/config.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
+
 $user = new paineis();
 autenticar();
 autenticarAdministrador();
+
+if(isset($_POST['nome_local'])){
+
+    include('../../model/adicionar_locais/adicionar_local.php');
+    if($query->execute()){
+        echo 'Cadastro realizado com sucesso!';
+    }else{
+        echo 'Erro ao cadastrar, tente novamente mais tarde...' . $query->error;
+    }
+    
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +42,7 @@ autenticarAdministrador();
     <aside class="menu-lateral">
 
         <div class="ms-3" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Prefeitura de umuarama">
-            <img class="text-center" id="logo" src="https://www.umuarama.pr.gov.br/img/logoumuarama.svg">
+            <img class="text-center" id="logo" src="https://www.umuarama.pr.gov.br/img/logoumuaramaBranco.svg">
         </div>
         <ul>
 
@@ -88,12 +100,12 @@ autenticarAdministrador();
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
+                    
                         <img id="imgsimbolo" src="../../../public/img/logoCidade.jpeg" alt="">
-                        <form action="">
+                        <form action="" method="post">
                             <div class="col">
                                 <label for="" class="form-label mt-3">Nome do local:</label>
-                                <input type="text" name="nomeLocal" class="form-control" placeholder="Ex.: Praia de Itapema">
+                                <input type="text" name="nome_local" class="form-control" placeholder="Ex.: Praia de Itapema">
                             </div>
                             
                             <div class="mt-3">

@@ -45,11 +45,11 @@ $result = $conn->query($sql_query);
 
                     <td>
                         
-                            <a  onclick="alerta()" href="alterar_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn me-4" style="background-color:#cfcf30;" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="alterar Agendamento">
+                            <a  onclick="alerta()" href="../../model/agendamentos/alterar_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn me-4" style="background-color:#cfcf30;" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="alterar Agendamento">
                                 <i id="icone_alterar" class="bi bi-calendar-plus"></i>
                             </a>
 
-                            <a onclick="alerta()" href="../../controller/agendamentos/excluir_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn" style="background-color:#c2000d;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir agendamento">
+                            <a onclick="alerta()" href="../../model/agendamentos/excluir_agendamento.php?id=<?php echo $agendamento['id_agendamentos']; ?>" class="btn" style="background-color:#c2000d;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir agendamento">
                                 <i id="icone_excluir" class="bi bi-calendar-x-fill"></i>
                             </a>
                         

@@ -31,9 +31,9 @@ autenticar();
 
     <aside class="menu-lateral">
 
-        <div class="ms-5 mb-4" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
+        <div class="ms-3" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Barra de ferramentas">
           
-        <img class="text-center" id="logo" src="../../../public//img//logoCidade (3).png">
+        <img class="text-center" id="logo" src="https://www.umuarama.pr.gov.br/img/logoumuaramaBranco.svg">
         </div> 
         <ul class="mt-5">
 
